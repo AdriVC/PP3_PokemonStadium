@@ -1,0 +1,40 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Sprites/Bayleef.png</file>
+        <file>Sprites/Background.png</file>
+        <file>Sprites/Blastoise.png</file>
+        <file>Sprites/Bulbasaur.png</file>
+        <file>Sprites/Charizard.png</file>
+        <file>Sprites/Charmander.png</file>
+        <file>Sprites/Charmeleon.png</file>
+        <file>Sprites/Chikorita.png</file>
+        <file>Sprites/Croconaw.png</file>
+        <file>Sprites/Cyndaquil.png</file>
+        <file>Sprites/Feraligatr.png</file>
+        <file>Sprites/Ivysaur.png</file>
+        <file>Sprites/Meganium.png</file>
+        <file>Sprites/Quilava.png</file>
+        <file>Sprites/Squirtle.png</file>
+        <file>Sprites/Totodile.png</file>
+        <file>Sprites/Typhlosion.png</file>
+        <file>Sprites/Wartortle.png</file>
+        <file>Sprites/Background2.png</file>
+        <file>Sprites/Female0.png</file>
+        <file>Sprites/Female1.png</file>
+        <file>Sprites/Female2.png</file>
+        <file>Sprites/Female3.png</file>
+        <file>Sprites/Female4.png</file>
+        <file>Sprites/Logo.png</file>
+        <file>Sprites/Male0.png</file>
+        <file>Sprites/Male1.png</file>
+        <file>Sprites/Male2.png</file>
+        <file>Sprites/Male3.png</file>
+        <file>Sprites/Male4.png</file>
+        <file>Sprites/Background3.png</file>
+        <file>Sprites/Background4.png</file>
+        <file>Sprites/Background5.png</file>
+        <file>Sprites/Background6.png</file>
+        <file>Sprites/Background7.png</file>
+        <file>Sprites/Venosaur.png</file>
+    </qresource>
+</RCC>

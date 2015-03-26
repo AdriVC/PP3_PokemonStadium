@@ -72,8 +72,8 @@
   <widget class="QLabel" name="lable_oponenteSprite">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>110</y>
+     <x>330</x>
+     <y>130</y>
      <width>92</width>
      <height>92</height>
     </rect>
@@ -539,7 +539,7 @@ padding: 6px;</string>
   <widget class="QGroupBox" name="group_oponenteInfo">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>30</x>
      <y>70</y>
      <width>281</width>
      <height>91</height>
@@ -780,7 +780,7 @@ padding: 6px;</string>
   <widget class="QGroupBox" name="group_oponenteInfo_2">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>240</x>
      <y>270</y>
      <width>281</width>
      <height>91</height>
@@ -863,8 +863,8 @@ padding: 6px;</string>
   <widget class="QLabel" name="lable_usuarioSprite">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>250</y>
+     <x>90</x>
+     <y>280</y>
      <width>92</width>
      <height>92</height>
     </rect>
@@ -877,6 +877,9 @@ padding: 6px;</string>
    </property>
    <property name="text">
     <string>usuario</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignBottom|Qt::AlignHCenter</set>
    </property>
   </widget>
   <widget class="QPushButton" name="button_habilidad">

@@ -38,5 +38,23 @@
         <file>Sprites/Player8.png</file>
         <file>Sprites/Player9.png</file>
         <file>Sprites/Background8.png</file>
+        <file>Sprites/BayleefBack.png</file>
+        <file>Sprites/BlastoiseBack.png</file>
+        <file>Sprites/BulbasaurBack.png</file>
+        <file>Sprites/CharizardBack.png</file>
+        <file>Sprites/CharmanderBack.png</file>
+        <file>Sprites/CharmeleonBack.png</file>
+        <file>Sprites/ChikoritaBack.png</file>
+        <file>Sprites/CroconawBack.png</file>
+        <file>Sprites/CyndaquilBack.png</file>
+        <file>Sprites/FeraligatrBack.png</file>
+        <file>Sprites/IvysaurBack.png</file>
+        <file>Sprites/MeganiumBack.png</file>
+        <file>Sprites/QuilavaBack.png</file>
+        <file>Sprites/SquirtleBack.png</file>
+        <file>Sprites/TotodileBack.png</file>
+        <file>Sprites/TyphlosionBack.png</file>
+        <file>Sprites/VenosaurBack.png</file>
+        <file>Sprites/WartortleBack.png</file>
     </qresource>
 </RCC>

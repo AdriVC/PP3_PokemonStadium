@@ -15,6 +15,7 @@ public:
     Movida tackle();
     Movida curl();
 	string getNombre()const;
+    string getBackSprite()const;
     string getSprite()const;
 	string getDebilidad()const;
 	string getVentaja()const;

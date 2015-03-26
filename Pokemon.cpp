@@ -47,8 +47,14 @@ Movida Pokemon::curl(){
 string Pokemon::getNombre()const{
 	return nombre;
 }
+
+string Pokemon::getBackSprite()const{
+    stringstream ss;
+    ss << ":/Sprites/" << nombre << "Back.png";
+    return ss.str();
+}
 string Pokemon::getSprite()const{
-	return sprite;
+    return sprite;
 }
 string Pokemon::getDebilidad()const{
 	return debilidad;

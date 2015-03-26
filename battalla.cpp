@@ -45,7 +45,7 @@ Battalla::Battalla(Pokemon* usuario,Pokemon* oponente,QWidget *parent) :
     QImage Logo(path);
     ui->lable_oponenteSprite->setPixmap(QPixmap::fromImage(Logo));
 
-    path = (this->usuario->getSprite()).c_str();
+    path = (this->usuario->getBackSprite()).c_str();
     QImage Logo2(path);
     ui->lable_usuarioSprite->setPixmap(QPixmap::fromImage(Logo2));
 

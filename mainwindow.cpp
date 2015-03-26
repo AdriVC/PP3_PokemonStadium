@@ -48,27 +48,30 @@ void MainWindow::on_button_exit_clicked()
 
 void MainWindow::on_button_new_clicked()
 {
-    newGame* ngame = new newGame(this);
-    ngame->exec();
-    if(!ngame->ifCancelado()){
-        this->setNewPlayer(ngame->getNewJugador());
+    newGame* newgame = new newGame(this);
+    newgame->exec();
+    if(!newgame->ifCancelado()){
+        this->setNewPlayer(newgame->getNewJugador());
         ui->button_load->setEnabled(true);
     }
 }
 
 void MainWindow::on_button_load_clicked()
 {
-    LoadGame* lgame = new LoadGame(jugadores,cuentas,this);
-    lgame->exec();
-    if(!lgame->isCancelado()){
-        this->partidaActual = jugadores[lgame->getCurrentGame()];
+    LoadGame* loadgame = new LoadGame(jugadores,cuentas,this);
+    loadgame->exec();
+    if(!loadgame->isCancelado()){
+        this->partidaActual = jugadores[loadgame->getCurrentGame()];
         PlayerGame* ventanaPartidaActual = new PlayerGame(partidaActual,this);
         ventanaPartidaActual->exec();
     }else {
-        if(lgame->isEliminado()){
-            jugadores[lgame->getCurrentGame()] = jugadores[cuentas];
+        if(loadgame->isEliminado()){
+            jugadores[loadgame->getCurrentGame()] = jugadores[cuentas];
             jugadores[cuentas] = NULL;
             cuentas--;
+            if(cuentas == 0){
+                ui->button_load->setEnabled(false);
+            }
         }
     }
 }

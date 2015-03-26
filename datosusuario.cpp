@@ -76,12 +76,18 @@ DatosUsuario::DatosUsuario(Jugador* actual,QWidget *parent) :
     QStringListModel *model = new QStringListModel(this);
     QStringList List;
     QString qstr;
-    for(int i=0; i<(int)this->actual->getPokedex().size(); i++){
-        qstr = QString::fromStdString(this->actual->getPokedex()[i]->toString());
-        List << qstr;
+    if(this->actual->getPokedex().size() == 0){
+        ui->button_retirar->setEnabled(false);
+    }else{
+        for(int i=0; i<(int)this->actual->getPokedex().size(); i++){
+            qstr = QString::fromStdString(this->actual->getPokedex()[i]->toString());
+            List << qstr;
+        }
+        model->setStringList(List);
+        ui->comboBox_retirarPokemon->setModel(model);
+        ui->button_retirar->setEnabled(true);
     }
-    model->setStringList(List);
-    ui->comboBox_retirarPokemon->setModel(model);
+
 
     num_sprite = this->actual->getSpriteNum();
     str = (this->actual->getSprite()).c_str();
@@ -153,5 +159,9 @@ void DatosUsuario::on_button_retirar_clicked()
         }
         model->setStringList(List);
         ui->comboBox_retirarPokemon->setModel(model);
+        ui->button_retirar->setEnabled(true);
+        if(this->actual->getPokedex().size() == 0){
+            ui->button_retirar->setEnabled(false);
+        }
     }
 }

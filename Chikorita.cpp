@@ -14,11 +14,7 @@ Chikorita::Chikorita(const Chikorita& other)
 }
 Chikorita::~Chikorita(){
 }
-string Chikorita::toString()const{
-	stringstream ss;
-    ss << Pokemon::getNombre() << "[Lv " << Pokemon::getNivel() << "]";
-	return ss.str();
-}
+
 Movida Chikorita::hiddenSkill(int efectividad){
     Movida leafguard("leafguard",0,40*Pokemon::getFuerza()/396,80,efectividad);
 	return leafguard;

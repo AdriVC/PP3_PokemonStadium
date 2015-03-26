@@ -9,21 +9,24 @@ using std::vector;
 
 class Jugador{
     string nombre,sprite;
-    bool femenino;
-    int spritePos;
+    int spritePos,totalPokemon,batallasGanadas,batallasPerdidas;
     vector<Pokemon*> pokedex;
 public:
-    Jugador(string,bool,int);
+    Jugador(string,int);
     Jugador(const Jugador&);
     ~Jugador();
     string toString()const;
     string getNombre()const;
     string getSprite()const;
-    bool getFemenino()const;
+    int getTotalPokemon()const;
+    int getBatallasGanadas()const;
+    int getBatallasPerdidas()const;
+    int getSpriteNum()const;
     void addPokemon(Pokemon*);
     void setNombre(string);
     void setSprite(int);
-    void setFemenino(bool,int);
+    void addBatallaGanada();
+    void addBatallaPerdida();
     vector<Pokemon*> getPokedex()const;
 };
 

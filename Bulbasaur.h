@@ -10,7 +10,6 @@ public:
 	Bulbasaur();
 	Bulbasaur(const Bulbasaur&);
 	~Bulbasaur();
-	virtual string toString()const;
 	virtual Movida hiddenSkill(int);
 };
 

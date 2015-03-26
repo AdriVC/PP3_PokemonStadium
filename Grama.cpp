@@ -14,11 +14,7 @@ Grama::Grama(const Grama& other)
 }
 Grama::~Grama(){
 }
-string Grama::toString()const{
-	stringstream ss;
-	ss << "Grama";
-	return ss.str();
-}
+
 Movida Grama::attack(int efectividad){
     Movida razorLeaf("razor leaf",-55*Pokemon::getVelocidad()/396,0,95,efectividad);
     return razorLeaf;

@@ -10,7 +10,6 @@ public:
 	Chikorita();
 	Chikorita(const Chikorita&);
 	~Chikorita();
-	virtual string toString()const;
 	virtual Movida hiddenSkill(int);
 };
 

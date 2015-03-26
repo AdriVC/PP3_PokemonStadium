@@ -14,11 +14,7 @@ Cyndaquil::Cyndaquil(const Cyndaquil& other)
 }
 Cyndaquil::~Cyndaquil(){
 }
-string Cyndaquil::toString()const{
-	stringstream ss;
-    ss << Pokemon::getNombre() << "[Lv " << Pokemon::getNivel() << "]";
-	return ss.str();
-}
+
 Movida Cyndaquil::hiddenSkill(int efectividad){
     Movida flashFire("flash fire",-90*Pokemon::getFuerza()/396,0,80,efectividad);
 	return flashFire;

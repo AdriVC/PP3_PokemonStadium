@@ -10,7 +10,6 @@ public:
 	Squirtle();
 	Squirtle(const Squirtle&);
 	~Squirtle();
-	virtual string toString()const;
 	virtual Movida hiddenSkill(int);
 };
 

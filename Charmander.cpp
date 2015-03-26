@@ -14,11 +14,7 @@ Charmander::Charmander(const Charmander& other)
 }
 Charmander::~Charmander(){
 }
-string Charmander::toString()const{
-	stringstream ss;
-    ss << Pokemon::getNombre() << "[Lv " << Pokemon::getNivel() << "]";
-	return ss.str();
-}
+
 Movida Charmander::hiddenSkill(int efectividad){
     Movida solarPower("solar power",-60*Pokemon::getFuerza()/396,0,80,efectividad);
 	return solarPower;

@@ -21,7 +21,7 @@
   <widget class="Line" name="line">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>210</x>
      <y>10</y>
      <width>20</width>
      <height>391</height>
@@ -144,9 +144,9 @@
   <widget class="Line" name="line_2">
    <property name="geometry">
     <rect>
-     <x>210</x>
+     <x>230</x>
      <y>200</y>
-     <width>321</width>
+     <width>301</width>
      <height>20</height>
     </rect>
    </property>
@@ -157,7 +157,7 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>410</x>
+     <x>420</x>
      <y>300</y>
      <width>111</width>
      <height>31</height>
@@ -240,7 +240,7 @@
   <widget class="QPushButton" name="button_batalla">
    <property name="geometry">
     <rect>
-     <x>380</x>
+     <x>390</x>
      <y>340</y>
      <width>141</width>
      <height>51</height>
@@ -385,7 +385,7 @@ padding: 6px;</string>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>250</x>
+     <x>270</x>
      <y>300</y>
      <width>101</width>
      <height>31</height>
@@ -468,7 +468,7 @@ padding: 6px;</string>
   <widget class="QPushButton" name="button_buscarPokemon">
    <property name="geometry">
     <rect>
-     <x>220</x>
+     <x>240</x>
      <y>340</y>
      <width>141</width>
      <height>51</height>
@@ -618,15 +618,15 @@ padding: 6px;</string>
     <rect>
      <x>20</x>
      <y>100</y>
-     <width>141</width>
+     <width>181</width>
      <height>211</height>
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="button_examinarPokemon">
+  <widget class="QPushButton" name="button_verPokedex">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>40</x>
      <y>330</y>
      <width>141</width>
      <height>41</height>
@@ -771,7 +771,7 @@ padding: 6px;</string>
   <widget class="QLabel" name="lable_username">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>330</x>
      <y>20</y>
      <width>121</width>
      <height>31</height>
@@ -881,7 +881,7 @@ padding: 6px;</string>
   <widget class="QLabel" name="lable_sprite">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>260</x>
      <y>80</y>
      <width>92</width>
      <height>92</height>
@@ -899,7 +899,7 @@ border-color:rgb(0, 0, 0);</string>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>330</x>
      <y>240</y>
      <width>151</width>
      <height>41</height>
@@ -1009,7 +1009,7 @@ border-color:rgb(0, 0, 0);</string>
   <widget class="QPushButton" name="button_salir">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>410</x>
      <y>130</y>
      <width>101</width>
      <height>41</height>
@@ -1151,10 +1151,10 @@ padding: 6px;</string>
     <string>Salir</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="button_salir_2">
+  <widget class="QPushButton" name="button_datos">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>410</x>
      <y>80</y>
      <width>101</width>
      <height>41</height>

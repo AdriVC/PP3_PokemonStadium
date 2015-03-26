@@ -10,7 +10,6 @@ public:
 	Cyndaquil();
 	Cyndaquil(const Cyndaquil&);
 	~Cyndaquil();
-	virtual string toString()const;
 	virtual Movida hiddenSkill(int);
 };
 

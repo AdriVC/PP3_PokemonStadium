@@ -21,22 +21,6 @@ public:
 
 private slots:
 
-    void on_rbutton_femenino_clicked();
-
-    void on_rbutton_masculino_clicked();
-
-    void on_button_avatarf0_clicked();
-    void on_button_avatarm0_clicked();
-    void on_button_avatarf1_clicked();
-    void on_button_avatarm1_clicked();
-    void on_button_avatarf2_clicked();
-    void on_button_avatarm2_clicked();
-    void on_button_avatarf3_clicked();
-    void on_button_avatarm3_clicked();
-    void on_button_avatarf4_clicked();
-    void on_button_avatarm4_clicked();
-
-
     void on_button_cancelar_clicked();
 
     void on_button_ok_clicked();

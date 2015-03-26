@@ -14,11 +14,7 @@ Bulbasaur::Bulbasaur(const Bulbasaur& other)
 }
 Bulbasaur::~Bulbasaur(){
 }
-string Bulbasaur::toString()const{
-	stringstream ss;
-    ss << Pokemon::getNombre() << "[Lv " << Pokemon::getNivel() << "]";
-	return ss.str();
-}
+
 Movida Bulbasaur::hiddenSkill(int efectividad){
     Movida chlorophyll("chlorophyll",0,50*Pokemon::getVelocidad()/396,80,efectividad);
 	return chlorophyll;

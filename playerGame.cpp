@@ -6,6 +6,7 @@
 #include "Totodile.h"
 #include "playerGame.h"
 #include "ui_playerGame.h"
+#include "loadpokemon.h"
 #include "Jugador.h"
 #include <iostream>
 #include <QString>
@@ -17,6 +18,7 @@
 #include <cstdlib>
 #include <ctime>
 #include "buscarpokemon.h"
+#include "datosusuario.h"
 #include "battalla.h"
 #include "Pokemon.h"
 using std::cout;
@@ -46,6 +48,9 @@ PlayerGame::PlayerGame(Jugador* jugadorActual,QWidget *parent) :
     QImage Logo(path);
     ui->lable_sprite->setPixmap(QPixmap::fromImage(Logo));
 
+    ui->button_batalla->setEnabled(false);
+    ui->button_verPokedex->setEnabled(false);
+
     stringstream ss;
     ss << (this->jugador->getNombre()) << ":";
     QString nombre = QString::fromStdString(ss.str());
@@ -73,7 +78,7 @@ Pokemon* PlayerGame::randPokemon(){
         return new Cyndaquil();
     else if(random == 4)
         return new Squirtle();
-    else if(random == 5)
+    else
         return new Totodile();
 }
 
@@ -97,22 +102,39 @@ void PlayerGame::resetPokedex(){
         QStringListModel *model = new QStringListModel(this);
         QStringList List;
         QString str;
-        for(int i=0; i<this->jugador->getPokedex().size(); i++){
+        for(int i=0; i<(int)this->jugador->getPokedex().size(); i++){
             str = QString::fromStdString(this->jugador->getPokedex()[i]->toString());
             List << str;
         }
         model->setStringList(List);
         ui->list_pokedex->setModel(model);
+        ui->button_batalla->setEnabled(true);
+        ui->button_verPokedex->setEnabled(true);
     }
 }
 
 void PlayerGame::on_button_batalla_clicked()
 {
-    Battalla* nuevaBatalla = new Battalla(this);
-    nuevaBatalla->exec();
+    Pokemon* oponente = randPokemon();
+    loadPokemon* nuevaloadPoke = new loadPokemon(jugador->getPokedex(),oponente,this);
+    nuevaloadPoke->exec();
+    if(!nuevaloadPoke->getCancelado()){
+        Battalla* nuevaBatalla = new Battalla(jugador->getPokedex()[nuevaloadPoke->getNumPokemon()],oponente,this);
+        nuevaBatalla->exec();
+        if(nuevaBatalla->getResultadoUsuario()){
+            this->jugador->addBatallaGanada();
+            this->jugador->getPokedex()[nuevaloadPoke->getNumPokemon()]->setNivel(nuevaBatalla->getBonoVictoria());
+        }else{
+            this->jugador->addBatallaPerdida();
+            if(!nuevaBatalla->getHuyo()){
+                //this->jugador->getPokedex().erase(jugador->getPokedex().begin()+nuevaloadPoke->getNumPokemon());
+            }
+        }
+        this->resetPokedex();
+    }
 }
 
-void PlayerGame::on_button_examinarPokemon_clicked()
+void PlayerGame::on_button_verPokedex_clicked()
 {
     Pokedex* poke = new Pokedex(this->jugador->getPokedex(),this);
     poke->exec();
@@ -121,4 +143,29 @@ void PlayerGame::on_button_examinarPokemon_clicked()
 void PlayerGame::on_button_salir_clicked()
 {
     this->close();
+}
+
+void PlayerGame::on_button_datos_clicked()
+{
+    DatosUsuario* ventanaDatos = new DatosUsuario(jugador,this);
+    ventanaDatos->exec();
+    if(!ventanaDatos->getCancelado()){
+        QString tituloWindow = QString::fromStdString("Partida Actual: "+this->jugador->getNombre());
+        this->setWindowTitle(tituloWindow);
+
+        const char* path = (this->jugador->getSprite()).c_str();
+        QImage Logo(path);
+        ui->lable_sprite->setPixmap(QPixmap::fromImage(Logo));
+
+        ui->button_batalla->setEnabled(false);
+        ui->button_verPokedex->setEnabled(false);
+
+        stringstream ss;
+        ss << (this->jugador->getNombre()) << ":";
+        QString nombre = QString::fromStdString(ss.str());
+        ui->lable_username->setText(nombre);
+        ss.str("");
+
+        this->resetPokedex();
+    }
 }

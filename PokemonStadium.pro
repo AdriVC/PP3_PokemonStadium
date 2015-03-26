@@ -32,7 +32,8 @@ SOURCES += main.cpp\
     pokedex.cpp \
     buscarpokemon.cpp \
     battalla.cpp \
-    loadpokemon.cpp
+    loadpokemon.cpp \
+    datosusuario.cpp
 
 HEADERS  += mainwindow.h \
     Agua.h \
@@ -53,7 +54,8 @@ HEADERS  += mainwindow.h \
     pokedex.h \
     buscarpokemon.h \
     battalla.h \
-    loadpokemon.h
+    loadpokemon.h \
+    datosusuario.h
 
 FORMS    += mainwindow.ui \
     newgame.ui \
@@ -62,7 +64,8 @@ FORMS    += mainwindow.ui \
     pokedex.ui \
     buscarpokemon.ui \
     battalla.ui \
-    loadpokemon.ui
+    loadpokemon.ui \
+    datosusuario.ui
 
 RESOURCES += \
     resources.qrc

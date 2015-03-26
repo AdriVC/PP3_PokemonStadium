@@ -10,7 +10,6 @@ public:
     Agua(string,string,string);
 	Agua(const Agua&);
 	~Agua();
-	virtual string toString()const;
 	virtual Movida attack(int);
 	virtual Movida defend(int);
 	virtual Movida hiddenSkill(int)=0;

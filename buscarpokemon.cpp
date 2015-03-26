@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+#include <QMessageBox>
 using std::stringstream;
 using std::pow;
 using std::srand;
@@ -84,7 +85,7 @@ void BuscarPokemon::on_button_lanzarRoca_clicked()
 
 void BuscarPokemon::on_button_lanzarComida_clicked()
 {
-    Movida lanzarComida("lanzar comida",this->oponente->getHp()*0.05,0,75,1);
+    Movida lanzarComida("lanzar comida",this->oponente->getHp()*0.1,0,75,1);
     this->oponente->setHp(lanzarComida.getGolpe());
     this->be=2;
     ui->progress_oponenteHp->setValue(this->oponente->getHp());
@@ -97,11 +98,18 @@ void BuscarPokemon::on_button_lanzarComida_clicked()
 void BuscarPokemon::on_button_capturar_clicked()
 {
     stringstream ss;
+    QMessageBox msgbox;
+    msgbox.setBaseSize(QSize(500, 150));
     int a = 2*be*(3*hp_inicial-2*this->oponente->getHp())/3*hp_inicial;
     if(a >= 22500){
         //pokemon capturado
         ss << "Usted ha capturado a " << this->oponente->getNombre();
         gano = true;
+        ss.str(string());
+        msgbox.setWindowTitle("Pokemon Atrapado!");
+        ss << "Ha capturado a " << this->oponente->getNombre() << "!";
+        msgbox.setText(ss.str().c_str());
+        msgbox.exec();
         this->close();
     }else{
         int b = (65535)*pow((double)a/50500,0.25);
@@ -131,6 +139,11 @@ void BuscarPokemon::on_button_capturar_clicked()
             // nombre de pokemon fue atrapado
             ss << "Usted ha capturado a " << this->oponente->getNombre();
             gano = true;
+            ss.str(string());
+            msgbox.setWindowTitle("Pokemon Atrapado!");
+            ss << "Ha capturado a " << this->oponente->getNombre() << "!";
+            msgbox.setText(ss.str().c_str());
+            msgbox.exec();
             this->close();
         }
     }
@@ -141,9 +154,16 @@ void BuscarPokemon::on_button_capturar_clicked()
 void BuscarPokemon::on_button_huir_clicked()
 {
     stringstream ss;
+    QMessageBox msgbox;
+    msgbox.setBaseSize(QSize(500, 150));
     ss << "Usted huyo...";
     QString cadena = QString::fromStdString(ss.str());
     ui->textEdit_plot->appendPlainText(cadena);
     this->plot = ui->textEdit_plot->toPlainText();
+    ss.str(string());
+    msgbox.setWindowTitle("Pokemon se Escapo");
+    ss << "Ha huido del " << this->oponente->getNombre();
+    msgbox.setText(ss.str().c_str());
+    msgbox.exec();
     this->close();
 }

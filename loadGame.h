@@ -17,6 +17,7 @@ public:
     ~LoadGame();
     bool isCancelado()const;
     int getCurrentGame()const;
+    bool isEliminado()const;
 
 private slots:
 
@@ -26,11 +27,13 @@ private slots:
 
     void on_button_cancelar_clicked();
 
+    void on_button_eliminar_clicked();
+
 private:
     Ui::LoadGame *ui;
     Jugador** jugadores;
     int juego;
-    bool cancelado;
+    bool cancelado,eliminado;
 };
 
 #endif // LOADGAME_H

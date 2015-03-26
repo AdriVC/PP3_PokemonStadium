@@ -14,11 +14,7 @@ Fuego::Fuego(const Fuego& other)
 }
 Fuego::~Fuego(){
 }
-string Fuego::toString()const{
-	stringstream ss;
-	ss << "Fuego";
-	return ss.str();
-}
+
 Movida Fuego::attack(int efectividad){
     Movida ember("ember",-40*Pokemon::getFuerza()/396,0,80,efectividad);
 	return ember;

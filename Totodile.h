@@ -10,7 +10,6 @@ public:
 	Totodile();
 	Totodile(const Totodile&);
 	~Totodile();
-	virtual string toString()const;
 	virtual Movida hiddenSkill(int);
 };
 

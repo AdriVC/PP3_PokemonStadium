@@ -23,9 +23,11 @@ private slots:
 
     void on_button_batalla_clicked();
 
-    void on_button_examinarPokemon_clicked();
+    void on_button_verPokedex_clicked();
 
     void on_button_salir_clicked();
+
+    void on_button_datos_clicked();
 
 private:
     Ui::PlayerGame *ui;

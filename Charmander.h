@@ -10,7 +10,6 @@ public:
 	Charmander();
 	Charmander(const Charmander&);
 	~Charmander();
-	virtual string toString()const;
 	virtual Movida hiddenSkill(int);
 };
 

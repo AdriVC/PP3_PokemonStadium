@@ -11,9 +11,9 @@ class Pokemon{
 public:
     Pokemon(string,string,string,string,string);
 	Pokemon(const Pokemon&);
-	~Pokemon();
+    virtual ~Pokemon();
     Movida tackle();
-    Movida block();
+    Movida curl();
 	string getNombre()const;
     string getSprite()const;
 	string getDebilidad()const;
@@ -27,7 +27,7 @@ public:
 	void setNombre();
 	void setDebilidad(string);
 	void setVentaja(string);
-	void setNivel(int);
+    void setNivel(double);
 	void setFuerza();
 	void setResistencia();
 	void setVelocidad();

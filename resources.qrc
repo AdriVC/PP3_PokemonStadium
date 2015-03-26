@@ -19,22 +19,24 @@
         <file>Sprites/Typhlosion.png</file>
         <file>Sprites/Wartortle.png</file>
         <file>Sprites/Background2.png</file>
-        <file>Sprites/Female0.png</file>
-        <file>Sprites/Female1.png</file>
-        <file>Sprites/Female2.png</file>
-        <file>Sprites/Female3.png</file>
-        <file>Sprites/Female4.png</file>
         <file>Sprites/Logo.png</file>
-        <file>Sprites/Male0.png</file>
-        <file>Sprites/Male1.png</file>
-        <file>Sprites/Male2.png</file>
-        <file>Sprites/Male3.png</file>
-        <file>Sprites/Male4.png</file>
         <file>Sprites/Background3.png</file>
         <file>Sprites/Background4.png</file>
-        <file>Sprites/Background5.png</file>
         <file>Sprites/Background6.png</file>
         <file>Sprites/Background7.png</file>
         <file>Sprites/Venosaur.png</file>
+        <file>Sprites/Background5.jpg</file>
+        <file>Sprites/Background9.png</file>
+        <file>Sprites/Player0.png</file>
+        <file>Sprites/Player1.png</file>
+        <file>Sprites/Player2.png</file>
+        <file>Sprites/Player3.png</file>
+        <file>Sprites/Player4.png</file>
+        <file>Sprites/Player5.png</file>
+        <file>Sprites/Player6.png</file>
+        <file>Sprites/Player7.png</file>
+        <file>Sprites/Player8.png</file>
+        <file>Sprites/Player9.png</file>
+        <file>Sprites/Background8.png</file>
     </qresource>
 </RCC>

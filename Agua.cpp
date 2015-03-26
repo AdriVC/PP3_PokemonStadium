@@ -14,11 +14,7 @@ Agua::Agua(const Agua& other)
 }
 Agua::~Agua(){
 }
-string Agua::toString()const{
-	stringstream ss;
-	ss << "Agua";
-	return ss.str();
-}
+
 Movida Agua::attack(int efectividad){
     Movida surf("surf",-90*Pokemon::getFuerza()/396,0,100,efectividad);
 	return surf;

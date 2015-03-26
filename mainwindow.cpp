@@ -14,8 +14,8 @@ using std::endl;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    cuentas(0),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    cuentas(0)
 {
     ui->setupUi(this);
     QPixmap bkgnd(":/Sprites/Background.png");
@@ -64,6 +64,12 @@ void MainWindow::on_button_load_clicked()
         this->partidaActual = jugadores[lgame->getCurrentGame()];
         PlayerGame* ventanaPartidaActual = new PlayerGame(partidaActual,this);
         ventanaPartidaActual->exec();
+    }else {
+        if(lgame->isEliminado()){
+            jugadores[lgame->getCurrentGame()] = jugadores[cuentas];
+            jugadores[cuentas] = NULL;
+            cuentas--;
+        }
     }
 }
 

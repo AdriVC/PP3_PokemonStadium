@@ -14,11 +14,7 @@ Totodile::Totodile(const Totodile& other)
 }
 Totodile::~Totodile(){
 }
-string Totodile::toString()const{
-	stringstream ss;
-    ss << Pokemon::getNombre() << "[Lv " << Pokemon::getNivel() << "]";
-	return ss.str();
-}
+
 Movida Totodile::hiddenSkill(int efectividad){
     Movida sheerforce("sheerforce",-80*Pokemon::getFuerza()/396,0,50,efectividad);
 	return sheerforce;

@@ -23,7 +23,7 @@ Pokemon::Pokemon(string ev1, string ev2, string ev3, string debilidad, string ve
 	this->hp = (2+rand()%3)*nivel;
 }
 Pokemon::Pokemon(const Pokemon& other)
-    :debilidad(other.debilidad),ventaja(other.ventaja),nivel(nivel),hp(hp){
+    :debilidad(other.debilidad),ventaja(other.ventaja),nivel(other.nivel),hp(other.hp){
     this->nombres[0] = other.nombres[0];
     this->nombres[1] = other.nombres[1];
     this->nombres[2] = other.nombres[2];
@@ -38,9 +38,9 @@ Movida Pokemon::tackle(){
     Movida tackle("tackle",-50*velocidad/396,0,95,1);
 	return tackle;
 }
-Movida Pokemon::block(){
-	Movida block("block",0,50*resistencia/396,95,1);
-	return block;
+Movida Pokemon::curl(){
+    Movida curl("curl",0,50*resistencia/396,95,1);
+    return curl;
 }
 string Pokemon::getNombre()const{
 	return nombre;
@@ -84,13 +84,18 @@ void Pokemon::setDebilidad(string){
 void Pokemon::setVentaja(string){
 	this->ventaja = ventaja;
 }
-void Pokemon::setNivel(int incremento){
-	this->nivel+=incremento;
-	this->setNombre();
+void Pokemon::setNivel(double incremento){
+    this->nivel= (int)((double)this->nivel*incremento);
+    if(this->nivel >100 ){
+        this->nivel = 100;
+    }else if (this->nivel <10 ){
+        this->nivel = 10;
+    }
+    this->setNombre();
 	this->setFuerza();
 	this->setResistencia();
 	this->setVelocidad();
-	this->setHp((2+rand()%3)*incremento);
+    this->setHp((int)((double)this->getHp())*(incremento-1.0));
 }
 void Pokemon::setFuerza(){
 	fuerza = (2+rand()%3)*nivel;
@@ -105,9 +110,11 @@ void Pokemon::setHp(int hp){
     this->hp+=hp;
     if(this->hp > 500)
         this->hp = 500;
+    if(this->hp < 0)
+        this->hp = 0;
 }
 string Pokemon::toString()const{
 	stringstream ss;
-	ss << nombre;
+    ss << nombre << " [Lv" << nivel << " | Hp" << hp << "]";
 	return ss.str();
 }

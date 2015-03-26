@@ -30,7 +30,7 @@ Pokedex::Pokedex(vector<Pokemon*> lista,QWidget *parent) :
     QStringListModel *model = new QStringListModel(this);
     QStringList List;
     QString str;
-    for(int i=0; i<this->lista.size(); i++){
+    for(int i=0; i<(int)this->lista.size(); i++){
         str = QString::fromStdString(this->lista[i]->toString());
         List << str;
     }
@@ -97,7 +97,7 @@ void Pokedex::on_combo_listaPokemon_currentIndexChanged(int index)
     ui->lineEdit_golpe->setText(cadena);
     ss.str(string());
     //llamar bloqueo
-    ss << (this->pokemon_actual->block().getNombre());
+    ss << (this->pokemon_actual->curl().getNombre());
     cadena = QString::fromStdString(ss.str());
     ui->lineEdit_bloqueo->setText(cadena);
     ss.str(string());

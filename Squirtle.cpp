@@ -14,11 +14,7 @@ Squirtle::Squirtle(const Squirtle& other)
 }
 Squirtle::~Squirtle(){
 }
-string Squirtle::toString()const{
-	stringstream ss;
-    ss << Pokemon::getNombre() << "[Lv " << Pokemon::getNivel() << "]";
-	return ss.str();
-}
+
 Movida Squirtle::hiddenSkill(int efectividad){
     Movida rainDish("rain dish",0,40*Pokemon::getResistencia()/396,60,efectividad);
 	return rainDish;

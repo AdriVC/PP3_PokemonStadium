@@ -7,13 +7,14 @@ class Movida{
 	string nombre;
     int poder, ayuda,certeza,random;
     double efectividad;
+    bool fallo;
 public:
 	Movida(string,int,int,int,double);
-	Movida(const Movida&);
+    Movida(Movida&);
 	~Movida();
     string toString()const;
 	string getNombre()const;
-	int getGolpe()const;
+    int getGolpe()const;
 	int getAyuda()const;
 };
 

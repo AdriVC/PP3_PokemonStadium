@@ -142,11 +142,7 @@ void DatosUsuario::on_button_retirar_clicked()
         msgbox.setStandardButtons(QMessageBox::Ok);
         msgbox.setDefaultButton(QMessageBox::Ok);
         msgbox.exec();
-        vector<Pokemon*>::iterator ret1 = actual->getPokedex().begin();
-        int ret = ui->comboBox_retirarPokemon->currentIndex();
-        cout << ret << " " << actual->getPokedex().size() << endl;
-        actual->getPokedex().erase(ret1 +ret);
-        cout << actual->getPokedex().size() << endl;
+        actual->eliminarPokemon(ui->comboBox_retirarPokemon->currentIndex());
 
         QStringListModel *model = new QStringListModel(this);
         QStringList List;

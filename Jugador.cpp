@@ -64,6 +64,10 @@ void Jugador::addPokemon(Pokemon* nuevo){
     totalPokemon++;
 }
 
+void Jugador::eliminarPokemon(int posicion){
+    pokedex.erase(pokedex.begin()+posicion);
+}
+
 void Jugador::setSprite(int spritePos){
     this->spritePos = spritePos;
     stringstream ss;

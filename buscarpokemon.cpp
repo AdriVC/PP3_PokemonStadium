@@ -71,6 +71,25 @@ Pokemon* BuscarPokemon::getOponente()const{
     return oponente;
 }
 
+void BuscarPokemon::pokemonRetirado(){
+    stringstream ss;
+    QMessageBox msgbox;
+    msgbox.setBaseSize(QSize(500, 200));
+    if(this->oponente->getHp() <= (int)((double)hp_inicial*0.1)){
+        gano = false;
+        ss << "\n" << this->oponente->getNombre() << " ha sido debilidato tanto que se ha retirado!";
+        QString cadena = QString::fromStdString(ss.str());
+        ui->textEdit_plot->appendPlainText(cadena);
+        this->plot = ui->textEdit_plot->toPlainText();
+        ss.str(string());
+        msgbox.setWindowTitle("Pokemon se Escapo");
+        ss << "No pudo caputrar a " << this->oponente->getNombre() << " porque quedo muy debilitado";
+        msgbox.setText(ss.str().c_str());
+        msgbox.exec();
+        this->close();
+    }
+}
+
 void BuscarPokemon::on_button_lanzarRoca_clicked()
 {
 
@@ -81,6 +100,7 @@ void BuscarPokemon::on_button_lanzarRoca_clicked()
     ss << "Usted " << lanzarRoca.toString();
     QString cadena = QString::fromStdString(ss.str());
     ui->textEdit_plot->appendPlainText(cadena);
+    this->pokemonRetirado();
 }
 
 void BuscarPokemon::on_button_lanzarComida_clicked()
@@ -90,9 +110,10 @@ void BuscarPokemon::on_button_lanzarComida_clicked()
     this->be=2;
     ui->progress_oponenteHp->setValue(this->oponente->getHp());
     stringstream ss;
-    ss << "Usted " << lanzarComida.toString();
+    ss << "\nUsted " << lanzarComida.toString();
     QString cadena = QString::fromStdString(ss.str());
     ui->textEdit_plot->appendPlainText(cadena);
+    this->pokemonRetirado();
 }
 
 void BuscarPokemon::on_button_capturar_clicked()
@@ -100,10 +121,12 @@ void BuscarPokemon::on_button_capturar_clicked()
     stringstream ss;
     QMessageBox msgbox;
     msgbox.setBaseSize(QSize(500, 150));
-    int a = 2*be*(3*hp_inicial-2*this->oponente->getHp())/3*hp_inicial;
-    if(a >= 22500){
+    int a = be*(3*hp_inicial-2*this->oponente->getHp())/5*hp_inicial;
+    if(a >= 225000){
         //pokemon capturado
         ss << "Usted ha capturado a " << this->oponente->getNombre();
+        QString cadena = QString::fromStdString(ss.str());
+        ui->textEdit_plot->appendPlainText(cadena);
         gano = true;
         ss.str(string());
         msgbox.setWindowTitle("Pokemon Atrapado!");
@@ -112,7 +135,7 @@ void BuscarPokemon::on_button_capturar_clicked()
         msgbox.exec();
         this->close();
     }else{
-        int b = (65535)*pow((double)a/50500,0.25);
+        int b = 64535*pow((double)a/50500,0.25);
         int n1 = rand()%65536;
         int n2 = rand()%65536;
         int n3 = rand()%65536;

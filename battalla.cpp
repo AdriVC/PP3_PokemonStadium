@@ -30,7 +30,7 @@ Battalla::Battalla(Pokemon* usuario,Pokemon* oponente,QWidget *parent) :
 
     this->usuarioHpInicial = usuario->getHp();
     this->oponenteHpInicial = oponente->getHp();
-    /*if(usuario->getVentaja() == this->oponente->getClass()){
+    if(usuario->getVentaja() == this->oponente->getClass()){
         this->efectividadUsuario = 2.0;
     }else if(usuario->getDebilidad() == this->oponente->getClass()){
         this->efectividadUsuario = 0.5;
@@ -39,7 +39,7 @@ Battalla::Battalla(Pokemon* usuario,Pokemon* oponente,QWidget *parent) :
         this->efectividadUsuario = 2.0;
     }else if(oponente->getDebilidad() == this->usuario->getClass()){
         this->efectividadUsuario = 0.5;
-    }*/
+    }
 
     const char* path = (this->oponente->getSprite()).c_str();
     QImage Logo(path);
@@ -107,7 +107,7 @@ void Battalla::pokemonRetirado(){
     stringstream ss;
     QMessageBox msgbox;
     msgbox.setBaseSize(QSize(500, 200));
-    if(this->usuario->getHp() <= (int)((double)usuarioHpInicial*0.02)){
+    if(this->usuario->getHp() <= (int)((double)usuarioHpInicial*0.05)){
         ganoUsuario = false;
         ss << "\nUsted ha perdido y su pokemon ha quedado retirado!";
         QString cadena = QString::fromStdString(ss.str());
@@ -120,7 +120,7 @@ void Battalla::pokemonRetirado(){
         msgbox.exec();
         this->close();
     }
-    if(this->oponente->getHp() <= (int)((double)oponenteHpInicial*0.02)){
+    if(this->oponente->getHp() <= (int)((double)oponenteHpInicial*0.05)){
         ganoUsuario = true;
         ss << "\n" << this->oponente->getNombre() << " ha perdido contra su " << this->usuario->getNombre() << "\nFelicidades!";
         QString cadena = QString::fromStdString(ss.str());

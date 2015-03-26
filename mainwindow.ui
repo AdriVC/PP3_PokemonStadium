@@ -163,6 +163,7 @@
     <property name="font">
      <font>
       <family>Pokemon Solid</family>
+      <pointsize>18</pointsize>
       <weight>50</weight>
       <bold>false</bold>
      </font>
@@ -309,6 +310,7 @@ padding: 6px;</string>
     <property name="font">
      <font>
       <family>Pokemon Solid</family>
+      <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -453,6 +455,7 @@ padding: 6px;</string>
     <property name="font">
      <font>
       <family>Pokemon Solid</family>
+      <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">

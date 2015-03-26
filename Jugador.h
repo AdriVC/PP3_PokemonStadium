@@ -23,6 +23,7 @@ public:
     int getBatallasPerdidas()const;
     int getSpriteNum()const;
     void addPokemon(Pokemon*);
+    void eliminarPokemon(int posicion);
     void setNombre(string);
     void setSprite(int);
     void addBatallaGanada();

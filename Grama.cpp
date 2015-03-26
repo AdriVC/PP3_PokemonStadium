@@ -15,6 +15,10 @@ Grama::Grama(const Grama& other)
 Grama::~Grama(){
 }
 
+string Grama::getClass()const{
+    return "Grama";
+}
+
 Movida Grama::attack(int efectividad){
     Movida razorLeaf("razor leaf",-55*Pokemon::getVelocidad()/396,0,95,efectividad);
     return razorLeaf;

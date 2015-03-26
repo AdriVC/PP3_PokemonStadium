@@ -4,19 +4,21 @@
 #include <sstream>
 #include <cstdlib>
 #include <ctime>
+#include <QMessageBox>
 using std::string;
 using std::stringstream;
 using std::srand;
 using std::time;
 
-Pokemon::Pokemon(string ev1, string ev2, string ev3, string debilidad, string ventaja)
+Pokemon::Pokemon(string evolucion1, string evolucion2, string evolucion3, string debilidad, string ventaja)
     :debilidad(debilidad),ventaja(ventaja){
-    this->nombres[0] = ev1;
-    this->nombres[1] = ev2;
-    this->nombres[2] = ev3;
-	srand(time(0)); //? aqui va este random o en el main?
+    this->nombres[0] = evolucion1;
+    this->nombres[1] = evolucion2;
+    this->nombres[2] = evolucion3;
+    srand(time(0));
 	this->nivel = 10+rand()%90;
-	this->setNombre();
+    this->nombre = nombres[(nivel-10)/30];
+    this->setSprite();
 	this->setFuerza();
 	this->setResistencia();
 	this->setVelocidad();
@@ -75,8 +77,16 @@ void Pokemon::setSprite(){
     this->sprite = ss.str();
 }
 void Pokemon::setNombre(){
-	this->nombre = nombres[(nivel-10)/30];
-	this->setSprite();
+    if(this->nombre != nombres[(nivel-10)/30]){
+        stringstream ss;
+        QMessageBox msgbox;
+        msgbox.setWindowTitle("Pokemon Evolucionado!");
+        ss << this->nombre << " ha evolucionado a ser un " << nombres[(nivel-10)/30];
+        msgbox.setText(ss.str().c_str());
+        msgbox.exec();
+        this->nombre = nombres[(nivel-10)/30];
+        this->setSprite();
+    }
 }
 void Pokemon::setDebilidad(string){
 	this->debilidad = debilidad;

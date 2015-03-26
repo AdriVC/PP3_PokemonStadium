@@ -98,18 +98,21 @@ void PlayerGame::resetPokedex(){
     QString poke = QString::fromStdString(ss.str());
     ui->label_pokedex->setText(poke);
 
-    if(this->jugador->getPokedex().size() >0){
-        QStringListModel *model = new QStringListModel(this);
-        QStringList List;
-        QString str;
-        for(int i=0; i<(int)this->jugador->getPokedex().size(); i++){
-            str = QString::fromStdString(this->jugador->getPokedex()[i]->toString());
-            List << str;
-        }
-        model->setStringList(List);
-        ui->list_pokedex->setModel(model);
+    QStringListModel *model = new QStringListModel(this);
+    QStringList List;
+    QString str;
+    for(int i=0; i<(int)this->jugador->getPokedex().size(); i++){
+        str = QString::fromStdString(this->jugador->getPokedex()[i]->toString());
+    List << str;
+    }
+    model->setStringList(List);
+    ui->list_pokedex->setModel(model);
+    if(jugador->getPokedex().size() > 0){
         ui->button_batalla->setEnabled(true);
         ui->button_verPokedex->setEnabled(true);
+    }else{
+        ui->button_batalla->setEnabled(false);
+        ui->button_verPokedex->setEnabled(false);
     }
 }
 
@@ -127,7 +130,7 @@ void PlayerGame::on_button_batalla_clicked()
         }else{
             this->jugador->addBatallaPerdida();
             if(!nuevaBatalla->getHuyo()){
-                //this->jugador->getPokedex().erase(jugador->getPokedex().begin()+nuevaloadPoke->getNumPokemon());
+                this->jugador->eliminarPokemon(nuevaloadPoke->getNumPokemon());
             }
         }
         this->resetPokedex();
@@ -156,9 +159,6 @@ void PlayerGame::on_button_datos_clicked()
         const char* path = (this->jugador->getSprite()).c_str();
         QImage Logo(path);
         ui->lable_sprite->setPixmap(QPixmap::fromImage(Logo));
-
-        ui->button_batalla->setEnabled(false);
-        ui->button_verPokedex->setEnabled(false);
 
         stringstream ss;
         ss << (this->jugador->getNombre()) << ":";

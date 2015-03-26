@@ -32,6 +32,7 @@ public:
 	void setResistencia();
 	void setVelocidad();
 	void setHp(int);
+    virtual string getClass()const=0;
 	virtual string toString()const;
 	virtual Movida attack(int)=0;
 	virtual Movida defend(int)=0;

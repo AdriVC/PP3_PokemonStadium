@@ -18,6 +18,7 @@ public:
     bool getGano()const;
     QString getPlot()const;
     Pokemon* getOponente()const;
+    void pokemonRetirado();
 
 private slots:
 

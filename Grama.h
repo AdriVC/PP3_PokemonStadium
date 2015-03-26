@@ -10,6 +10,7 @@ public:
     Grama(string,string,string);
 	Grama(const Grama&);
 	~Grama();
+    virtual string getClass()const;
 	virtual Movida attack(int);
 	virtual Movida defend(int);
 	virtual Movida hiddenSkill(int)=0;
